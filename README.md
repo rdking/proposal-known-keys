@@ -17,6 +17,9 @@ Object.getOwnPropertySymbols(obj)          -> Object.getKnownPropertySymbols(obj
 Object.keys(obj)                           -> Object.knownKeys(obj)
 ```
 
+## Issues
+1 big issue with this proposal is that accessor properties added via the `class` keyword are always defined as non-enumerable. This means that accessor properties will still not be seen by the new functions that only access enumerable properties. This proposal has no intention of remedying this behavior. Decorators may provide a solution for this.
+
 ## Behavior
 The behavior of each of the 7 new functions should parallel the existing functions while diving through the prototype chain. In general, each of the new functions can be implemented by repeated application of their predecessors. A potential reference implementation of each function is provided below.
 
