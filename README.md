@@ -18,7 +18,7 @@ Object.keys(obj)                           -> Object.knownKeys(obj)
 ```
 
 ## Behavior
-The behavoir of each of the 7 new functions should parallel the existing functions while diving through the prototype chain. In general, each of the new functions can be implemented by repeated application of their predecessors. A potential reference implementation of each function is provided below.
+The behavior of each of the 7 new functions should parallel the existing functions while diving through the prototype chain. In general, each of the new functions can be implemented by repeated application of their predecessors. A potential reference implementation of each function is provided below.
 
 
 #### Object.assignKnown(target, ...sources)
