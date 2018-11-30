@@ -17,6 +17,8 @@ Object.getOwnPropertySymbols(obj)          -> Object.getKnownPropertySymbols(obj
 Object.keys(obj)                           -> Object.knownKeys(obj)
 ```
 
+In the same way as "OwnProperty" refers to enumerable properties of the object **excluding** prototype properties, "KnownProperty" refers to the union of the "OwnProperty" list of both the object and all objects in its prototype chain. In essence, if `(prop in obj)`, then `prop` is a "known" property. Each of the "known" functions has the same enumerability limitation as the "own" predecessor.
+
 ## Issues
 1 big issue with this proposal is that accessor properties added via the `class` keyword are always defined as non-enumerable. This means that accessor properties will still not be seen by the new functions that only access enumerable properties. This proposal has no intention of remedying this behavior. Decorators may provide a solution for this.
 
